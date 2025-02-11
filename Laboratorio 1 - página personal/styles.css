@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header nav{
+    background: #000;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 40px;
+}
+
+.logo{
+    width: 70px;
+
+}
+
+.menu-navegacion{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+li{
+    margin: 0 20px;
+}
+
+.sobre-mi{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    place-items: center;
+    margin: 0 80px;
+}
+
+.titulo{
+    font-size: 48px;
+    margin: -100px 0 30px 0;
+} 
+
+.degree{
+    font-size: 20px;
+    margin: 0 0 30px 0;
+}
+
+.titulo, .degree, .bio{
+    text-align: center;
+}
+
+.img-personal{
+    border-radius: 50%;
+    width: 400px;
+    margin-top: -100px;
+}
+
+.titulo-hobbies{
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 20px 0;
+
+}
+
+.galeria-hobbies{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 90vh;
+    gap: 20px;
+    place-items: center;
+}
+
+.galeria{
+    width: 50%;
+}
+
+.titulo-preguntas{
+    font-size: 36px;
+    text-align: center;
+
+}
