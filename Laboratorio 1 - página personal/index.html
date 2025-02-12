@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,49 +11,195 @@
         <nav>
             <img class="logo" src="/images/Logo.png" alt="Logo personal">
             <ul class="menu-navegacion">
-                <li>Yo</li>
-                <li>Mis hobbies</li>
-                <li>Preguntas</li>
+                <li><a class="link-nav" href="#Yo">Yo</a></li>
+                <li><a class="link-nav" href="#Hobbies">Mis hobbies</a></li>
+                <li><a class="link-nav" href="#Preguntas">Preguntas</a></li>
+                <li><a class="link-nav" href="#Contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="sobre-mi">
+        <section class="sobre-mi" id="yo">
             <article>
-                <h1 class="titulo">Fernanda Valdez</h1>
-                <h2 class="degree">Estudiante de Ingeniería en Tecnologías Computacionales</h2>
-                <p class="bio">Soy Fer, una persona curiosa y apasionada, me gusta encontrar mi inspiración en los pequeños detalles. 
+                <h2 class="titulo">Fernanda Valdez</h2>
+                <h3 class="degree">Estudiante de Ingeniería en Tecnologías Computacionales</h3>
+                <p class="bio">Soy Fer, me considero una persona curiosa y apasionada, me gusta encontrar mi inspiración en los pequeños detalles. 
                     Suelo explorar el equilibrio entre lo humano y la tecnología, siempre buscando que mis proyectos tengan 
-                    funcionalidad con un sentido estético y emocional.Me gusta crear, analizar y dar vida a mis ideas 
-                    siempre con un toque de creatividad e innovación.
+                    funcionalidad con un sentido estético y emocional. Me gusta crear, analizar y dar vida a mis ideas 
+                    siempre con un toque de creatividad e innovación.<br><br>
+
+                    Mis principales hobbies estan muy ligados al arte, cuando hago arte logro estar en un plano completamente diferente
+                    en donde solo estoy yo y mi propio diseño. Algunos de mis hobbies principales son: El dibujo, la pintura, cerámica, música
+                    y la fotografía. Solia tomar clases LiFE de pintura y fotografía pero por los cambios de horario ya no me es posible.<br> <br>
+
+                    He tenido la oportunidad de trabajar en proyectos personales, principalmente en desarrollo web, y también formo parte del grupo estudiantil ACM, que se dedica principalmente a la difusión de la programación competitiva, además de generar varios proyectos para que los compañeros de la carrera se involucren un poco más y desarrollen diferentes habilidades.
                 </p>
+
             </article>
             
             <img class="img-personal" src="/images/yo.jpg" alt="imagen personal">
             
         </section>
         
-        <section class="mis-hobbies">
+        <section class="mis-hobbies" id="Hobbies">
             <h2 class="titulo-hobbies">Mis Hobbies</h2>
             <article class="galeria-hobbies">
-
-                <img class="galeria" src="images/Hobby Paint.jpg" alt="hobby pintar">
-                <img class="galeria" src="images/hobby music.jpg" alt="hobby escuchar musica">
-                <img class="galeria" src="images/hobby Cocina.jpg" alt="hobby cocinar">
-                <img class="galeria" src="images/hobby code.jpg" alt="hobby programar">
-                <img class="galeria" src="images/hobby Photo.jpg" alt="hobby tomar fotos">
+                <img class="galeria" src="images/hobby_cocina.jpg" alt="hobby pintar">
+                <img class="galeria" src="images/hobby_music.jpg" alt="hobby escuchar musica">
+                <img class="galeria" src="/images/hobby_code.jpg" alt="hobby cocinar">
+                <img class="galeria" src="/images/Hobby_paint.jpg" alt="hobby programar">
+                <img class="galeria" src="images/hobby_photo.jpg" alt="hobby tomar fotos">
             </article>
         </section>
 
-        <section class="preguntas">
-            <article>
+        <section id="Preguntas">
+            <article class="preguntas">
                 <h2 class="titulo-preguntas">Preguntas</h2>
 
+                <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+                <p>El Internet son una red de computadoras al rededor de todo el mundo conectadas entre si. La World Wide Web
+                    es toda la colección de paginas web que se encuentran dentro del internet.
+                </p>
+
+                <h3>¿Cuáles son las partes de un URL?</h3>
+                <ol>
+                    <li>Protocolo</li>
+                    <li>Subdominio</li>
+                    <li>Dominio</li>
+                    <li>TLD</li>
+                    <li>subcarpeta</li>
+                    <li>Slug</li>
+                    <li>Parámetros</li>
+                </ol>
+                <img class="URL-parts" src="/images/Partes_url.png" alt="Iamgen con las partes de la url"><br>
+                <small>Pol, T. (2023, 29 septiembre). ¿Qué es una URL? significado, estructura y consejos de optimización. Semrush Blog. <a href="https://es.semrush.com/blog/que-es-una-url/">https://es.semrush.com/blog/que-es-una-url/</a></small>
+
+                <h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+                <ol>
+                    <li><strong>GET</strong>: Solicita al servidor una inofrmación concreta. Las peticiones de GET solo deben recuperar datos</li>
+                    <li><strong>HEAD</strong>: Al igual que el GET solicita información al servidor, pero sin el cuerpo de la solicitud</li>
+                    <li><strong>POST</strong>: Es usado para enviar información al servidor, esta información se guarda en el cuerpo de la solicitud</li>
+                    <li><strong>PUT</strong>: Actualiza o reemplaza los recursos en el servidor</li>
+                    <li><strong>PATCH</strong>: Aplica modificaciones parciales a un recurso del servidor</li>
+                    <li><strong>DELETE</strong>: Borra un recurso específico del servidor</li>
+                </ol><br>
+                <small>Métodos de petición HTTP - HTTP | MDN. (2023, 24 julio). MDN Web Docs. <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods">https://developer.mozilla.org/es/docs/Web/HTTP/Methods</a></small>
+
+                <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+                <p> Se debe de utilizar el metodo POST ya que se esta enviando una solicitud al servidor y por la naturaleza del metodo POST
+                    este no muestra datos sensibles en la URL lo que previeene filtración de datos delicados </p>
+
+                <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL</h3>
+                <p> El método GET ya que es el encargado de solicitar y obtener la información del servidor</p>
+
+                <h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+                <p> Nos indica que el servidor ha procesado correctamente la solicitud del cliente y está devolviendo el contenido solicitado en el cuerpo de la respuesta. </p><br>
+
+                <small>Team, W. (2023, 16 marzo). What Is a 200 Status Code? WebFX. <a href="https://www.webfx.com/web-development/glossary/http-status-codes/what-is-a-200-status-code/">https://www.webfx.com/web-development/glossary/http-status-codes/what-is-a-200-status-code/</a></small>
+
+                <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+                <p> Depende del caso en el que este sucediendo este eror. Segun Google "solucionar los errores 404 no merece la pena porque este tipo de error no perjudica ni a la 
+                    indexación ni al posicionamiento de tu sitio." Pero depende mucho del porque sucede este error, si bien en muchos casos sucede porque se elimino el contenido
+                    de la pagina web o porque se traslado a otro sitio, tambien existe la posibilidad de que este error surga por problemas en la URL o porque hay un problema
+                    con el servidor, en estos casos es importante solucionar los errores.
+                </p><br>
+
+                <small>Errores 404 (Page Not Found) de página no encontrada - Ayuda de Search Console. (s. f.). <a href="https://support.google.com/webmasters/answer/2445990?hl=es">https://support.google.com/webmasters/answer/2445990?hl=es</a></small>
+
+                <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+                <p> El error 500 significa que hay un error interno en el servidor, por lo que el problema no viene desde el usuario. Si es responsabilidad
+                    del desarrollador corregir el sitio para solucionarel error ya que no solo causa una mala experiencia para el usuario si no que tambien
+                    puede afectar cualquier funcionalidad del sitio web
+                </p>
+
+                <h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
+                <p> Los atributos depreciados en HTML5 son aquellos atributos que han quedado "obsoletos" con el paso del tiempo y que en 
+                    un futuro dejaran de ser compatibles. </p>
+
+                <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+                <p> La principal caracteristica de HTML5 es que permite hacer los sitios web más dinamicos incluyendo elementos multimedia <br>
+                    Algunas de las principales diferencias son: </p>
+                    <ol>
+                        <li>La declaración del DOCTYPE</li>
+                        <li>Elementos semanticos</li>
+                        <li>Soporte multimedia</li>
+                        <li>Formularios más comlejos</li>
+                        <li>Integración de API´s</li>
+                    </ol>
+                <br>
+                <small>Sasidharan, P. (2025, 31 enero). Difference Between HTML4 and HTML5: Comprehensive Guide. ItsMyBot. <a href="https://itsmybot.com/difference-between-html4-and-html5/">https://itsmybot.com/difference-between-html4-and-html5/</a></small>
+
+                <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+                <p>Componentes:</p>
+                    <ul>
+                        <li> table: Contenedor de la tabla </li>
+                        <li> tr: Filas </li>
+                        <li> th: Columnas </li>
+                        <li> td: Celda de datos </li>
+                        <li> thead: Encabezados </li>
+                        <li> tbody: Datos principales </li>
+                        <li> tfoot: Footer de la tabla </li>
+                    </ul>
+
+                <p>Estilos:</p> 
+                    <ul>
+                        <li>border: bordes de la tabla</li>
+                        <li>border-collapse: Combina las celdas de la tabla</li>
+                        <li>padding y margin: Espaciado interno y externo</li>
+                        <li>width y height: Tamaño de la tabla y las celdas</li>
+                    </ul>
+                <br>
+
+                <small> The Table element - HTML: HyperText Markup Language | MDN. (2024, 19 diciembre). MDN Web Docs. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table</a></small><br>
+                <small> W3Schools.com. (s. f.). <a href="https://www.w3schools.com/css/css_table_style.asp"> https://www.w3schools.com/css/css_table_style.asp </a></small>
+
+                <h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+                <p> Campos de entrada (inputs), controles de seleccion (select, radio, checkbox), botones, areas de texto (textarea)</p>
+
+                <h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h3>
+                <p> Google Chrome es totalmente compatible con HTML5 y de acuerdo a "Can I Use" es el navegador con mayor soporte </p><br>
+                <small>Can I use. . . Support tables for HTML5, CSS3, etc. (s. f.). <a href="https://caniuse.com/">https://caniuse.com/</a></small><br><br>
+
+                <h2>Sobre el ciclo de vida y desarrollo de los sistemas de información:</h2>
+
+                <h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3>
+                <p> Planificación, Análisis, Diseño, Implementación, Pruebas, Instalación/Despliegue, Uso y mantenimiento </p>
+    
+                
+                <h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
+                <p> Análisis de requisitos, diseño, desarrollo, pruebas, implementación, mantenimiento </p>
+
             </article>
+        </section>
+
+        <section class="contacto" id="Contacto">
+            <h2 class="titulo-contacto">Información de contacto</h2>
+            <article class="info-contacto">
+                <p>Luisa Fernanda Valdez Guillen</p>
+                <p>Matricula: A01711870</p>
+                <p>Correo: ferdivaldezg@gmail.com</p><br><br>
+            </article>
+
+            <h3>Mandame un mensaje: </h3>
+
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje"></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+
         </section>
 
     </main>
+
+    <footer>
+        Editor utilizado: <a class="editor" href="https://code.visualstudio.com/"> Visual studio code</a>
+    </footer>
 
 </body>
 </html>
