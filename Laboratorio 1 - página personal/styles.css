@@ -1,9 +1,11 @@
+/* Selector universal */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Selector genérico */
 header nav{
     background: #000;
     width: 100%;
@@ -13,6 +15,7 @@ header nav{
     padding: 0 40px;
 }
 
+/* Selector de clase */
 .logo{
     width: 70px;
 
@@ -92,6 +95,7 @@ header nav{
     width: 50%;
 }
 
+/* Selector de id */
 #Preguntas{
     margin: 20px 60px
 }
@@ -145,6 +149,7 @@ button {
     transition: all 0.3s;
 }
 
+/* Selector de pseudo clase */
 button:hover{
     background-color: #94dafb;
     color: #000000;
