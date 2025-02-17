@@ -6,12 +6,12 @@ let numero_1 =  prompt("Ingresa un número: ");
 
 const respuesta_1 = document.getElementById("respuesta_1");
 
-let tablaHTML = `<table border="1">
+let tablaHTML = `<table class="table">
                     <thead>
                         <tr>
-                            <th>Número</th>
-                            <th>Cuadrado</th>
-                            <th>Cubo</th>
+                            <th scope="col">Número</th>
+                            <th scope="col">Cuadrado</th>
+                            <th scope="col">Cubo</th>
                         </tr>
                     </thead>
                     <tbody>`;
