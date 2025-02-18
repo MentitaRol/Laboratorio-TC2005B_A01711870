@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(40, 40, 40);
+    color: #d0d0d0;
+}
+
+.problem__instructions {
+    margin: 40px;
+}
+
+.fw-normal{
+    text-align: center;
+}
+
+.form-signin{
+    max-width: 330px;
+    padding: 1rem;
+    margin: auto;
+}
+
+.form-control{
+    background: rgb(40, 40, 40);
+    color: #d0d0d0;
+}
+
+.form-control:focus{
+    background: rgb(40, 40, 40);
+    outline: none;
+    color: #d0d0d0;
+}
+
+.btn-danger{
+    margin: 1rem 0 1rem 0;
+}
+
+.mensaje-error{
+    color: #f72d2d;
+    font-weight: bold;
+}
+
+.mensaje-valido{
+    color: green;
+    font-weight: bold;
+}
+
+.resaltar {
+    color: rgb(249, 193, 255);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ver_mas{
+    max-width: 150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    border: solid #f72d2d 1px;
+    border-radius: 20px;
+}
+
+.ver_mas__titulo{
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#contenido {
+    display: none;
+}
+
+.rotado {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
