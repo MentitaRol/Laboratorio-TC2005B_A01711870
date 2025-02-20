@@ -14,3 +14,15 @@ for(let item of arreglo){
         console.log(item);
     }, item);
 }
+
+//crear servidor web desde node
+const http =   requiere('http');
+
+const server = http.createServer((request,response) => {
+    //     console.log(request.url);
+    //     response.setHeader('Content-Type', 'text/html');
+    //     response.write("");
+    //     response.end();
+});
+
+// server.listen(3000);
