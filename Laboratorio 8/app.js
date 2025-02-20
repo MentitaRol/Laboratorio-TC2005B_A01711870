@@ -1,3 +1,5 @@
+//Practica en clase 20/2/2025
+
 //require nos permite obtener los modulos de js
 //fs accede a los archivos del sistema
 const filesystem = require('fs');
