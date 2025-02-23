@@ -55,11 +55,37 @@ const filesystem = require('fs');
 function escribirCadena(cadena){;
     filesystem.writeFile('string_Node.txt', cadena, (err) =>{
         if(err) throw "Algo salio mal";
-        console.log('Exito');
     } );
 };
 
 escribirCadena('Escribir un string en un archivo de texto usando writeFile');
 
+// Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. 
+// If target exists, then return its index. Otherwise, return -1.
 
+const nums = [-1, 0, 3, 5, 9, 12];
+const target = 5;
 
+function binarySearch(nums, target){
+    let inicio = 0;
+    let final = nums.length - 1
+
+    while (inicio <= final){
+        let mitad = Math.floor((inicio + final) / 2);
+        let num = nums[mitad];
+
+        if(num == target){
+            return mitad;
+        }
+        if(num < target){
+            inicio = mitad + 1;
+        }
+        if(num > target){
+            final = mitad - 1;
+        }
+    }
+
+    return - 1;
+}
+
+console.log(binarySearch(nums, target));
