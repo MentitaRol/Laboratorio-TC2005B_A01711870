@@ -48,4 +48,18 @@ promedio = suma/arreglo.length;
 
 console.log(promedio);
 
+// Una función que reciba un string y escriba el string en un archivo de texto. Apóyate del módulo fs.
+
+const filesystem = require('fs');
+
+function escribirCadena(cadena){;
+    filesystem.writeFile('string_Node.txt', cadena, (err) =>{
+        if(err) throw "Algo salio mal";
+        console.log('Exito');
+    } );
+};
+
+escribirCadena('Escribir un string en un archivo de texto usando writeFile');
+
+
 
