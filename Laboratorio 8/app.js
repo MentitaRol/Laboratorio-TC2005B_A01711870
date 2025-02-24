@@ -1,96 +1,38 @@
-//Practica en clase 20/2/2025
+//Practica en clase 24/2/2025
 
-//require nos permite obtener los modulos de js
-//fs accede a los archivos del sistema
+const http = require('http');
 
-// const filesystem = require('fs');
+const server = http.createServer((request, response) => {
+    // request recibe la solicitud del cliente
+    // respond envia una respuesta al cliente
+    if(request.method == "GET"){
+        console.log(request.url);
+        response.setHeader('Content-Type', 'text/html');
+        response.write(html);
+        response.end();
+    } else if (request.method == "POST"){
+        const datos = [];
+        request.on('data', (dato) => {
+            console.log(dato);
+            datos.push(dato);
+        });
 
-//crea un archivo .txt y escribe en el 'Hola desde node'
-
-// filesystem.writeFileSync('hola.txt', 'Hola desde node');
-
-
-//sort asincrono
-
-// const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 500];
-
-// for(let item of arreglo){
-//     setTimeout(() => {
-//         console.log(item);
-//     }, item);
-// }
-
-//crear servidor web desde node
-
-// const http = require('http');
-
-// const server = http.createServer((request, response) => {
-//     console.log(request.url);
-//     response.setHeader('Content-Type', 'text/html');
-//     response.write("");
-//     response.end();
-// });
-
-// server.listen(3000);
-
-//Una función que reciba un arreglo de números y devuelva su promedio.
-
-const arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-let suma = 0;
-let promedio = 0;
-
-for(let i of arreglo){
-    suma += i;
-}
-
-promedio = suma/arreglo.length;
-
-console.log(promedio);
-
-// Una función que reciba un string y escriba el string en un archivo de texto. Apóyate del módulo fs.
-
-const filesystem = require('fs');
-
-function escribirCadena(cadena){;
-    filesystem.writeFile('string_Node.txt', cadena, (err) =>{
-        if(err) throw "Algo salio mal";
-    } );
-};
-
-escribirCadena('Escribir un string en un archivo de texto usando writeFile');
-
-// Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. 
-// If target exists, then return its index. Otherwise, return -1.
-
-const nums = [-1, 0, 3, 5, 9, 12];
-const target = 5;
-
-function binarySearch(nums, target){
-    let inicio = 0;
-    let final = nums.length - 1
-
-    while (inicio <= final){
-        let mitad = Math.floor((inicio + final) / 2);
-        let num = nums[mitad];
-
-        if(num == target){
-            return mitad;
-        }
-        if(num < target){
-            inicio = mitad + 1;
-        }
-        if(num > target){
-            final = mitad - 1;
-        }
+        request.on('end', () => {
+            const datos_completos = Buffer.concat(datos).toString();
+            console.log(datos_completos);
+            nombres.push(datos_completos.split('=')[1]);
+            response.setHeader('Content-Type','text/html');
+            for(const nombre of nombres){
+                response.write(nombre);
+            }
+            response.end();
+        });
     }
+});
 
-    return - 1;
-}
+server.listen(3000);
 
-console.log(binarySearch(nums, target));
-
-// Crea una pequeña aplicación web que al enviar una petición al servidor, devuelva una de las páginas que creaste anteriormente en tus laboratorios.
+const nombres = [];
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -154,31 +96,16 @@ const html = `<!DOCTYPE html>
         </div>
 
         <form action="/" method="POST">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <h1 class="h3 mb-3 fw-normal">Escribe algo</h1>
 
             <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre" name="nombre">
+            <label for="floatingPassword">Nombre</label>
             </div><br>
 
-            <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-            </div><br>
-
-            <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button><br><br>
+            <input type="submit" id="boton_submit" class="btn btn-primary w-100 py-2" value="enviar"><br><br>
         </form>
     </section>
 
 </body>
 </html>`;
-
-const http = require('http');
-
-const server = http.createServer((request, response) => {
-    response.setHeader('Content-Type', 'text/html');
-    response.write(html);
-    response.end();
-});
-
-server.listen(3000);
