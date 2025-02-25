@@ -13,7 +13,7 @@ const html = `<!DOCTYPE html>
     <section class="container">
         <div class="row align-items-start">
             <div class="col">
-                <form action="/nombres" method="POST">
+                <form action="/nombres/agregar" method="POST">
                     <h1 class="h3 mb-3 fw-normal">Escribe algo</h1>
 
                     <div class="form-floating">
@@ -53,7 +53,15 @@ app.use( '/ruta', (request, response, next) => {
     response.send('Respuesta de la ruta "/ruta"');
 }); 
 
-app.use('/nombres', (request, response, next) => {
+//Cuando se registra un middleware con app.get(), 
+//el middleware sólo se registra para el método HTTP GET
+app.get('/nombres/agregar', (request, response, next) => {
+    response.send(html);
+});
+
+//Cuando se registra un middleware con app.post(), 
+//el middleware sólo se registra para el método HTTP POST
+app.post('/nombres/agregar', (request, response, next) => {
     response.send(html);
 });
 
