@@ -32,7 +32,7 @@ const server = http.createServer((request, response) => {
     }else{
         response.statusCode = 404;
         response.setHeader('Content-Type', 'text/html');
-        response.write(html_header + "La página no existe" + html_footer);
+        response.write("La página no existe");
         response.end();
     }
 });
