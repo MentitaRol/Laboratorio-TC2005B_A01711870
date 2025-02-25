@@ -5,7 +5,7 @@ const http = require('http');
 const server = http.createServer((request, response) => {
     // request recibe la solicitud del cliente
     // respond envia una respuesta al cliente
-    if(request.method == "GET"){
+    if(request.url == "/" && request.method == "GET"){
         console.log(request.url);
         response.setHeader('Content-Type', 'text/html');
         response.write(html);
@@ -29,6 +29,11 @@ const server = http.createServer((request, response) => {
             }
             response.end();
         });
+    }else{
+        response.statusCode = 404;
+        response.setHeader('Content-Type', 'text/html');
+        response.write(html_header + "La página no existe" + html_footer);
+        response.end();
     }
 });
 
