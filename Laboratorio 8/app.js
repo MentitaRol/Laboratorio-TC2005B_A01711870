@@ -13,7 +13,7 @@ const server = http.createServer((request, response) => {
     } else if (request.method == "POST"){
         const datos = [];
         request.on('data', (dato) => {
-            console.log(dato);
+            // console.log(dato);
             datos.push(dato);
         });
 
@@ -22,7 +22,9 @@ const server = http.createServer((request, response) => {
             console.log(datos_completos);
             nombres.push(datos_completos.split('=')[1]);
             response.setHeader('Content-Type','text/html');
+            response.write('<div class="row align-items-start">');
             for(const nombre of nombres){
+                response.write('<div class="col">');
                 response.write(nombre);
             }
             response.end();
@@ -95,16 +97,20 @@ const html = `<!DOCTYPE html>
             </article>
         </div>
 
-        <form action="/" method="POST">
-            <h1 class="h3 mb-3 fw-normal">Escribe algo</h1>
+        <div class="row align-items-start">
+            <div class="col">
+                <form action="/" method="POST">
+                    <h1 class="h3 mb-3 fw-normal">Escribe algo</h1>
 
-            <div class="form-floating">
-            <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre" name="nombre">
-            <label for="floatingPassword">Nombre</label>
-            </div><br>
+                    <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre" name="nombre">
+                    <label for="floatingPassword">Nombre</label>
+                    </div><br>
 
-            <input type="submit" id="boton_submit" class="btn btn-primary w-100 py-2" value="enviar"><br><br>
-        </form>
+                    <input type="submit" id="boton_submit" class="btn btn-primary w-100 py-2" value="enviar"><br><br>
+                </form>
+            </div>
+        </div>
     </section>
 
 </body>
