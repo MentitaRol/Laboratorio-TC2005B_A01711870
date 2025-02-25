@@ -1,4 +1,4 @@
-const html = `<!DOCTYPE html>
+const html_content = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,9 +30,17 @@ const html = `<!DOCTYPE html>
 </body>
 </html>`;
 
+const nombres = [];
 
 const express = require('express');
 const app = express();
+
+//body-parser es un middleware de Express que permite analizar los datos del cuerpo 
+// de una solicitud HTTP y convertirlos en un formato accesible para node
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 //Configurar un modulo de express -> Middleware
 
@@ -56,12 +64,20 @@ app.use( '/ruta', (request, response, next) => {
 //Cuando se registra un middleware con app.get(), 
 //el middleware sólo se registra para el método HTTP GET
 app.get('/nombres/agregar', (request, response, next) => {
-    response.send(html);
+    response.send(html_content);
 });
 
 //Cuando se registra un middleware con app.post(), 
 //el middleware sólo se registra para el método HTTP POST
 app.post('/nombres/agregar', (request, response, next) => {
+    //request.body es un objeto que contiene los datos enviados en el cuerpo de la solicitud HTTP
+    console.log(request.body);
+    nombres.push(request.body.nombre);
+    console.log(nombres);
+    let html = html_content;
+    for(let nombre of nombres){
+        html += nombre;
+    }
     response.send(html);
 });
 
