@@ -4,6 +4,11 @@ const app = express();
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Variables de configuración de Express, la carpeta donde estarán almacenados los archivos html correspondientes a las vistas
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 //body-parser es un middleware de Express que permite analizar los datos del cuerpo 
 // de una solicitud HTTP y convertirlos en un formato accesible para node
 
