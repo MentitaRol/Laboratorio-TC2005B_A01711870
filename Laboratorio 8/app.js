@@ -21,7 +21,7 @@ const server = http.createServer((request, response) => {
             const datos_completos = Buffer.concat(datos).toString();
             console.log(datos_completos);
             nombres.push(datos_completos.split('=')[1]);
-            response.setHeader('Content-Type','text/html');
+            response.setHeader('Content-Type', 'text/html');
             response.write('<div class="row align-items-start">');
             for(const nombre of nombres){
                 response.write('<div class="col">');
