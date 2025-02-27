@@ -19,7 +19,7 @@ const html_content = `<!DOCTYPE html>
     <section class="container">
         <div class="row align-items-start">
             <div class="col">
-                <form action="/nombres" method="POST">
+                <form action="/nombres/agregar" method="POST">
                     <h1 class="h3 mb-3 fw-normal">Escribe algo</h1>
 
                     <div class="form-floating">
@@ -38,22 +38,17 @@ const html_content = `<!DOCTYPE html>
 
 const nombres = [];
 
-//Cuando se registra un middleware con app.get(), 
-//el middleware sólo se registra para el método HTTP GET
 router.get('/agregar', (request, response, next) => {
     response.send(html_content);
 });
 
-//Cuando se registra un middleware con app.post(), 
-//el middleware sólo se registra para el método HTTP POST
 router.post('/agregar', (request, response, next) => {
-    //request.body es un objeto que contiene los datos enviados en el cuerpo de la solicitud HTTP
     console.log(request.body);
     nombres.push(request.body.nombre);
     console.log(nombres);
     let html = html_content;
     for(let nombre of nombres){
-        html += nombre;
+        html += nombre + ' ';
     }
     response.send(html);
 });
