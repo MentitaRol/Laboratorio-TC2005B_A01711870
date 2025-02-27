@@ -19,7 +19,7 @@ const html_content = `<!DOCTYPE html>
     <section class="container">
         <div class="row align-items-start">
             <div class="col">
-                <form action="/nombres/agregar" method="POST">
+                <form action="/nombres" method="POST">
                     <h1 class="h3 mb-3 fw-normal">Escribe algo</h1>
 
                     <div class="form-floating">
