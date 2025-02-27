@@ -1,5 +1,7 @@
 //Practica en clase 24/2/2025
 
+const filesystem = require('fs');
+
 const http = require('http');
 
 const server = http.createServer((request, response) => {
@@ -30,6 +32,13 @@ const server = http.createServer((request, response) => {
             const datos_completos = Buffer.concat(datos).toString();
             console.log(datos_completos);
             nombres.push(datos_completos.split('=')[1]);
+
+             //El servidor guarda los datos en un archivo de texto.
+
+            filesystem.writeFile('nombres.txt', nombres.join('\n'), (err) => {
+                if(err) console.error("Error al escribir en el archivo:", err);;
+            });
+
             response.setHeader('Content-Type', 'text/html');
             response.write('<div class="row align-items-start">');
             for(const nombre of nombres){
