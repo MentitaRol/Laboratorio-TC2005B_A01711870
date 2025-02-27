@@ -32,7 +32,7 @@ const server = http.createServer((request, response) => {
     }else{
         response.statusCode = 404;
         response.setHeader('Content-Type', 'text/html');
-        response.write("La página no existe");
+        response.write("La pagina no existe");
         response.end();
     }
 });
@@ -57,50 +57,7 @@ const html = `<!DOCTYPE html>
 
         <div id="contenido">
             <article>
-                <h4 class="h4">Laboratorio 6: Programación orientada a eventos</h4>
-
-                <h5 class="h5">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h5>
-                <p>
-                    La validación del lado del servidor actúa como una capa adicional de protección, ya que valida los datos en el servidor antes de procesarlos . 
-                    Esto evita posibles manipulaciones en la validación del lado del cliente y garantiza que solo se acepten datos válidos y seguros .
-                </p>
-
-                <small>Robin, E. (2024, 1 febrero). Why JavaScript form data validation is not secure? - Newsoftwares.net blog. Newsoftwares.net Blog.
-                    <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                    href= "https://www.newsoftwares.net/blog/why-javascript-form-data-validation-is-not-secure/#What_is_JavaScript_Form_Data_Validation">
-                    https://www.newsoftwares.net/blog/why-javascript-form-data-validation-is-not-secure/#What_is_JavaScript_Form_Data_Validation
-                </a></small><br><br>
-
-                <h5 class="h5">¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h5>
-                <p>
-                    Los usuarios pueden desactivar JavaScript en la configuración de su navegador o usar herramientas que bloqueen los scripts. 
-                    Si su única línea de defensa es la validación de JavaScript, los usuarios pueden desactivar JavaScript y enviar los datos que deseen.
-                </p>
-
-                <small>Robin, E. (2024, 1 febrero). Why JavaScript form data validation is not secure? - Newsoftwares.net blog. Newsoftwares.net Blog.
-                    <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                    href= "https://www.newsoftwares.net/blog/why-javascript-form-data-validation-is-not-secure/#What_is_JavaScript_Form_Data_Validation">
-                    https://www.newsoftwares.net/blog/why-javascript-form-data-validation-is-not-secure/#What_is_JavaScript_Form_Data_Validation
-                </a></small><br><br>
-
-                <h5 class="h5">Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces 
-                    ¿por qué la primera pregunta dice que es una buena práctica?
-                </h5>
-                <p>
-                    En la primer pregunta se dice que es una buena practica implementar la validación del lado del servidor.
-                    La validación que se puede saltar y burlar facilmente es la validación del lado del cliente por JavaScript.
-
-                    No importa cuán exhaustiva sea la validación del lado del cliente, siempre implemente la validación del lado del servidor. 
-                    Esto garantiza que, incluso si alguien omite la validación de JavaScript, el servidor detectará datos maliciosos o malformados.
-                </p>
-
-                <small>Robin, E. (2024, 1 febrero). Why JavaScript form data validation is not secure? - Newsoftwares.net blog. Newsoftwares.net Blog.
-                    <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                    href= "https://www.newsoftwares.net/blog/why-javascript-form-data-validation-is-not-secure/#What_is_JavaScript_Form_Data_Validation">
-                    https://www.newsoftwares.net/blog/why-javascript-form-data-validation-is-not-secure/#What_is_JavaScript_Form_Data_Validation
-                </a></small><br><br>
-            </article>
-        </div>
+                <br><br><h4 class="h4">Laboratorio 10: Rutas y formas</h4><br><br>
 
         <div class="row align-items-start">
             <div class="col">
