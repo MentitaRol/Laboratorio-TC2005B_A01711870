@@ -55,5 +55,4 @@ router.get('/pilon', (require, response) => {
     response.send(`<h1>Una más, por si acaso</h1>`)
 });
 
-
 module.exports = router;
