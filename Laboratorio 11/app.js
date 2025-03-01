@@ -33,4 +33,8 @@ app.use('/nombres', rutasNombres);
 const nuevasRutas = require('./routes/nuevas_rutas.routes');
 app.use('/', nuevasRutas);
 
+app.use((request, response) => {
+    response.status(404).send('Pagina no encontrada');
+});
+
 app.listen(3000);
