@@ -30,4 +30,7 @@ app.use( '/ruta', (request, response, next) => {
 const rutasNombres = require('./routes/nombres.routes');
 app.use('/nombres', rutasNombres);
 
+const nuevasRutas = require('./routes/nuevas_rutas.routes');
+app.use('/', nuevasRutas);
+
 app.listen(3000);
