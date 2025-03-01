@@ -4,6 +4,8 @@ const express = require('express');
 
 const router = express.Router();
 
+const fileSystem = require('fs');
+
 const html_content = `<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,6 +53,10 @@ router.post('/agregar', (request, response, next) => {
     console.log(request.body);
     nombres.push(request.body.nombre);
     console.log(nombres);
+
+    fileSystem.writeFile('nombres.txt', nombres.join('\n'),(err) => {
+        if(err) console.error("Error al escribir en el archivo:", err);
+    });
 
     let html = html_content;
     for(let nombre of nombres){
