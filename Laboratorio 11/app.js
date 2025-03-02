@@ -42,4 +42,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 const FerPersonal = require('./routes/personal.routes');
 app.use('/Fer', FerPersonal);
 
+app.use((request, response) => {
+    response.status(404).send('Pagina no encontrada');
+});
+
+
 app.listen(3000);
