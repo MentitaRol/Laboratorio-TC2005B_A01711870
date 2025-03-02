@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Variables de configuración de Express, la carpeta donde estarán almacenados los archivos html correspondientes a las vistas
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 //body-parser es un middleware de Express que permite analizar los datos del cuerpo 
 // de una solicitud HTTP y convertirlos en un formato accesible para node
 
@@ -30,8 +38,14 @@ app.use( '/ruta', (request, response, next) => {
 const rutasNombres = require('./routes/nombres.routes');
 app.use('/nombres', rutasNombres);
 
+app.use(express.static(path.join(__dirname, 'public')));
+const FerPersonal = require('./routes/personal.routes');
+app.use('/Fer', FerPersonal);
+
+/*
 const nuevasRutas = require('./routes/nuevas_rutas.routes');
 app.use('/', nuevasRutas);
+*/
 
 app.use((request, response) => {
     response.status(404).send('Pagina no encontrada');
