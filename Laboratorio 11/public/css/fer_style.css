@@ -1,0 +1,174 @@
+/* Selector universal */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Selector genérico */
+header nav{
+    background: #000;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Selector de clase */
+.logo{
+    width: 70px;
+
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.menu__option{
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 20px;
+    
+}
+
+.yo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    place-items: center;
+    margin: 0 80px;
+}
+
+.yo__titulo{
+    font-size: 48px;
+    margin: -300px 0 30px 0;
+} 
+
+.yo__carrera{
+    font-size: 20px;
+    margin: 70px 0 30px 0;
+}
+
+.yo__titulo, .yo__carrera{
+    text-align: center;
+}
+
+.yo__bio{
+    text-align: justify;
+}
+
+.yo__img{
+    border-radius: 50%;
+    width: 400px;
+    margin-top: -500px;
+}
+
+.section__titulo{
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 20px 0;
+
+}
+
+.section__bio{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0948a0;
+    margin: 30px;
+}
+
+.hobbies__galeria{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 90vh;
+    gap: 10px;
+    place-items: center;
+}
+
+.hobbies__img{
+    width: 50%;
+}
+
+/* Selector de id */
+#Preguntas{
+    margin: 20px 60px
+}
+
+h3{
+    margin: 20px;
+}
+
+.preguntas__URL__parts{
+    width: 50%;
+
+}
+
+#Contacto{
+    margin-top: 80px;
+    height: 90vh;
+    text-align: center;
+}
+
+.contacto__info{
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+    gap: 10px;
+    font-size: 20px;
+}
+
+input{
+    height: 40px;
+}
+
+textarea{
+    height: 100px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 80px;
+    border-radius: 5px;
+    align-self: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Selector de pseudo clase */
+button:hover{
+    background-color: #94dafb;
+    color: #000000;
+    box-shadow: 5px 5px 10px #56a7fd;
+}
+
+footer{
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 24px;
+    font-weight: 500;
+    height: 20vh;
+    width: 100%;
+
+}
+
+.editor{
+    color: #fff; 
+}

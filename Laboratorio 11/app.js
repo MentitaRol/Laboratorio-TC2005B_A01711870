@@ -38,4 +38,8 @@ app.use( '/ruta', (request, response, next) => {
 const rutasNombres = require('./routes/nombres.routes');
 app.use('/nombres', rutasNombres);
 
+app.use(express.static(path.join(__dirname, 'public')));
+const FerPersonal = require('./routes/personal.routes');
+app.use('/Fer', FerPersonal);
+
 app.listen(3000);
