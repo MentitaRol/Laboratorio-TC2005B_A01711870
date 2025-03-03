@@ -10,10 +10,8 @@ router.get('/agregar', nombres_controller.get_agregar);
 
 router.post('/agregar', nombres_controller.post_agregar);
 
-const path = require('path');
 
-router.get('/mostrar', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
-});
+
+router.get('/mostrar', nombres_controller.get_mostrar);
 
 module.exports = router;
