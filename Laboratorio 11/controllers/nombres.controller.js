@@ -1,5 +1,6 @@
 const path = require('path');
 const Nombre = require('../models/nombre.model');
+const { request } = require('http');
 
 exports.get_agregar = (request, response, next) => {
     response.render('agregar_nombre');
@@ -10,6 +11,10 @@ exports.post_agregar = (request, response, next) => {
     const nombre = new Nombre(request.body.nombre);
     nombre.save();
 
+    response.redirect('/nombres');
+};
+
+exports.get_lista = (request, response, next) => {
     response.render('lista_nombres', {
         nombres: Nombre.fetchAll(),
     });
