@@ -4,6 +4,8 @@ const express = require('express');
 
 const router = express.Router();
 
+const nombres_controller = require('../controllers/nombres.controller');
+
 /*
 const fileSystem = require('fs');
 
@@ -41,9 +43,7 @@ const html_content = `<!DOCTYPE html>
 
 const nombres = [];*/
 
-router.get('/agregar', (request, response, next) => {
-    response.render('agregar_nombre');
-});
+router.get('/agregar', nombres_controller.get_agregar);
 
 router.post('/agregar', (request, response, next) => {
     console.log(request.body);
