@@ -8,7 +8,7 @@ module.exports = class Nombre {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save(){
-        nombres.push(this.nombre);
+        nombres.push(this);
 
     }
 
