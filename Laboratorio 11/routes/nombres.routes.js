@@ -6,19 +6,9 @@ const router = express.Router();
 
 //Separar logica de controladores y rutas | lab 13
 const nombres_controller = require('../controllers/nombres.controller');
-
 router.get('/agregar', nombres_controller.get_agregar);
 
-router.post('/agregar', (request, response, next) => {
-    console.log(request.body);
-    nombres.push(request.body.nombre);
-    console.log(nombres);
-
-//Laboratorio 12 
-    response.render('lista_nombres', {
-        nombres: nombres,
-    });
-});
+router.post('/agregar', nombres_controller.post_agregar);
 
 const path = require('path');
 
