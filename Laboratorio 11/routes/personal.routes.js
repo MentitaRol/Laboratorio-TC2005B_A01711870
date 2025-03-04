@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 
-router.get('/personal', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'fer_personal.html'))
-});
+const personal_controller = require('../controllers/personal.controller');
+router.get('/personal', personal_controller.get_personal);
 
 module.exports = router;
