@@ -11,6 +11,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+//agregamos como middleware el manejo de sesiones
+
+const session = require('express-session');
+
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
 //body-parser es un middleware de Express que permite analizar los datos del cuerpo 
 // de una solicitud HTTP y convertirlos en un formato accesible para node
 
