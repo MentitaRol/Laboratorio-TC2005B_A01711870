@@ -1,6 +1,4 @@
-const path = require('path');
 const Nombre = require('../models/nombre.model');
-const { response } = require('express');
 
 exports.get_agregar = (request, response, next) => {
     console.log(request.session);
@@ -11,6 +9,8 @@ exports.post_agregar = (request, response, next) => {
     console.log(request.body);
     const nombre = new Nombre(request.body.nombre);
     nombre.save();
+
+    response.setHeader('Set-Cookie', `ultimo_nombre = ${nombre.nombre}`);
 
     response.redirect('/nombres');
 };
