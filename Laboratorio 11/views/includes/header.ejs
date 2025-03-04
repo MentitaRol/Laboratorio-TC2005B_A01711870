@@ -10,7 +10,10 @@
     <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="/nombres" class="nav-link">Nombres</a></li>
+            <% if (isLoggedIn) { %>
+                <li class="nav-item"><a href="/nombres" class="nav-link">Nombres</a></li>
+            <% } %>
+            
             <li class="nav-item"><a href="/Fer/personal" class="nav-link">Sobre Mi</a></li>
             <li class="nav-item"><a href="/nombres/mostrar" class="nav-link">Validar contraseña</a></li>
         </ul>
