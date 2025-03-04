@@ -1,6 +1,5 @@
 const path = require('path');
 const Nombre = require('../models/nombre.model');
-const { request } = require('http');
 
 exports.get_agregar = (request, response, next) => {
     response.render('agregar_nombre');
