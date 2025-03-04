@@ -20,9 +20,9 @@
         <div class="col-md-3 text-end">
             <% if (isLoggedIn) { %>
                 <%= username %> | 
-            <button type="button" class="btn btn-outline-primary me-2">Log in</button>
+            <a href="/users/logout" class="btn btn-primary">Log out</a>
             <% }else{ %>
-            <button type="button" class="btn btn-primary">Log out</button>
+            <a href="/users/login" class="btn btn-outline-primary me-2">Log in</a>
             <% } %>
         </div>
     </header>

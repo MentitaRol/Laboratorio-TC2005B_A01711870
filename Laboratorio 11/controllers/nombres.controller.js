@@ -19,6 +19,7 @@ exports.post_agregar = (request, response, next) => {
 };
 
 exports.get_lista = (request, response, next) => {
+    console.log(request.get('Cookie'));
     response.render('lista_nombres', {
         nombres: Nombre.fetchAll(),
 
