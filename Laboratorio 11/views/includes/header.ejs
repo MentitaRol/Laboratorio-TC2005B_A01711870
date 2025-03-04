@@ -14,6 +14,14 @@
             <li class="nav-item"><a href="/Fer/personal" class="nav-link">Sobre Mi</a></li>
             <li class="nav-item"><a href="/nombres/mostrar" class="nav-link">Validar contraseña</a></li>
         </ul>
+        <div class="col-md-3 text-end">
+            <% if (isLoggedIn) { %>
+                <%= username %> | 
+            <button type="button" class="btn btn-outline-primary me-2">Log in</button>
+            <% }else{ %>
+            <button type="button" class="btn btn-primary">Log out</button>
+            <% } %>
+        </div>
     </header>
 </body>
 </html>
