@@ -1,0 +1,7 @@
+
+#Node artifact file
+node_modules/
+dist/
+
+#Generate by Windows
+Thumbs.db
