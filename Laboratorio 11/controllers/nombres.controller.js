@@ -9,13 +9,16 @@ exports.get_agregar = (request, response, next) => {
 }
 
 exports.post_agregar = (request, response, next) => {
-    console.log(request.body);
     const nombre = new Nombre(request.body.nombre);
-    nombre.save();
+    nombre.save()
+        .then(() => {
+            response.redirect('/nombres');
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 
     response.setHeader('Set-Cookie', `ultimo_nombre = ${nombre.nombre}`);
-
-    response.redirect('/nombres');
 };
 
 exports.get_lista = (request, response, next) => {
