@@ -1,7 +1,5 @@
 const db = require('../util/database');
 
-const nombres = [];
-
 module.exports = class Nombre {
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
     constructor(mi_nombre){
@@ -15,6 +13,6 @@ module.exports = class Nombre {
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll(){
-        return nombres;
+        return db.execute('SELECT * FROM nombres');
     }
 }

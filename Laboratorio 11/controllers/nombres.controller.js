@@ -25,16 +25,22 @@ exports.post_agregar = (request, response, next) => {
 };
 
 exports.get_lista = (request, response, next) => {
-    console.log(request.get('Cookie'));
     const mensaje = request.session.info || '';
     if(request.session.info){
         request.session.info = '';
     }
-    response.render('lista_nombres', {
-        nombres: Nombre.fetchAll(),
-        isLoggedIn: request.session.isLoggedIn || false,
-        username: request.session.username || '',
-        info: mensaje,
+
+    Nombre.fetchAll()
+        .then(([rows, fielData]) => {
+            response.render('lista_nombres', {
+                nombres: rows,
+                isLoggedIn: request.session.isLoggedIn || false,
+                username: request.session.username || '',
+                info: mensaje,
+            });
+        })
+        .catch((error) => {
+            console.log(error);
     });
 };
 
