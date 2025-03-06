@@ -1,3 +1,5 @@
+const {info} = require('console');
+
 const Nombre = require('../models/nombre.model');
 
 exports.get_agregar = (request, response, next) => {
@@ -12,6 +14,7 @@ exports.post_agregar = (request, response, next) => {
     const nombre = new Nombre(request.body.nombre);
     nombre.save()
         .then(() => {
+            request.session.info = `Nombre ${nombre.nombre} guardado.`;
             response.redirect('/nombres');
         })
         .catch((error) => {
@@ -23,14 +26,19 @@ exports.post_agregar = (request, response, next) => {
 
 exports.get_lista = (request, response, next) => {
     console.log(request.get('Cookie'));
+    const mensaje = request.session.info || '';
+    if(request.session.info){
+        request.session.info = '';
+    }
     response.render('lista_nombres', {
         nombres: Nombre.fetchAll(),
-
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        info: mensaje,
     });
 };
 
 exports.get_mostrar = (request, response, next) => {
+    const path = require('path');
     response.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
 };

@@ -1,5 +1,15 @@
 <%- include('includes/header.ejs') %> 
 
+<% if(info != '') { %>
+    <div class="alert alert-primary" role="alert">
+        <%= info %>
+    </div>
+<% } %>
+
+<a class="btn btn-primary " href="/nombres/agregar">
+    Agregar nombre
+</a>
+
 <% for(let nombre of nombres){ %>
     <div>
         <p>
