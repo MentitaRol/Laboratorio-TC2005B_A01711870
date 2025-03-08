@@ -30,7 +30,7 @@ exports.get_lista = (request, response, next) => {
         request.session.info = '';
     }
 
-    Nombre.fetchAll()
+    Nombre.fetch(request.params.id)
         .then(([rows, fielData]) => {
             response.render('lista_nombres', {
                 nombres: rows,

@@ -12,6 +12,9 @@ router.post('/agregar', nombres_controller.post_agregar);
 
 router.get('/mostrar', nombres_controller.get_mostrar);
 
+// ruta dinamica
+router.get('/:id', nombres_controller.get_lista);
+
 router.get('/', nombres_controller.get_lista);
 
 module.exports = router;
