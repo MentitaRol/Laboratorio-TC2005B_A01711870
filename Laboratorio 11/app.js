@@ -11,6 +11,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+//agregamos como middleware el manejo de sesiones
+
+const session = require('express-session');
+
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
 //body-parser es un middleware de Express que permite analizar los datos del cuerpo 
 // de una solicitud HTTP y convertirlos en un formato accesible para node
 
@@ -23,20 +33,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 //Middleware: software que esta entre un sistema operativo y las aplicaciones que se ejecutan en el.
 //Permite la comunicación y administración de datos en aplicaciones
 
-// Con use declaramos middleware 
-app.use((request, response, next) => {
-    console.log('Middleware!');
-
-    //Le permite a la petición avanzar hacia el siguiente middleware
-    next(); 
-});
-
-//Agregar rutas con express
-//Este middleware se ejecuta solo desde la ruta
-app.use( '/ruta', (request, response, next) => {
-    response.send('Respuesta de la ruta "/ruta"');
-}); 
-
 const rutasNombres = require('./routes/nombres.routes');
 app.use('/nombres', rutasNombres);
 
@@ -44,10 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 const FerPersonal = require('./routes/personal.routes');
 app.use('/Fer', FerPersonal);
 
-/*
-const nuevasRutas = require('./routes/nuevas_rutas.routes');
-app.use('/', nuevasRutas);
-*/
+const rutasUsuarios = require('./routes/users.routes');
+app.use('/users', rutasUsuarios);
 
 app.use((request, response) => {
     response.status(404).send('Pagina no encontrada');
