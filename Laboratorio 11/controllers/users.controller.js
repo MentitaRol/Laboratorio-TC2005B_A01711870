@@ -15,6 +15,5 @@ exports.get_logout = (request, response, next) => {
     request.session.destroy(() => {
         //Este código se ejecuta cuando la sesión se elimina.
         response.redirect('/users/login'); 
-        
     })
 }
