@@ -18,7 +18,9 @@ exports.post_login = (request, response, next) => {
                     if(doMatch){
                         request.session.username = rows[0].username;
                         request.session.isLoggedIn = true;
-                        response.redirect('/nombres');
+                        return request.session.save(err => {
+                            response.redirect('/nombres');
+                        });
                     }else{
                         response.redirect('/users/login');
                     }
