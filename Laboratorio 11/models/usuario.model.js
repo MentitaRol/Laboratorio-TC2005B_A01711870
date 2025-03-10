@@ -22,13 +22,13 @@ module.exports = class Usuario{
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
-    static fetchOne(id){
-        return db.execute('SELECT * FROM usuarios WHERE id=?', [id]);
+    static fetchOne(username) {
+        return db.execute('SELECT * FROM usuarios WHERE username=?', [username]);
     }
 
-    static fetch(id){
-        if(id){
-            return this.fetchOne(id);
+    static fetch(username) {
+        if (username) {
+            return this.fetchOne(username);
         }else{
             return this.fetchAll();
         }

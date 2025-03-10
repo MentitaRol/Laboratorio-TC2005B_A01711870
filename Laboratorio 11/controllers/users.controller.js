@@ -1,5 +1,6 @@
 const { request, response } = require("express");
-const Usuario = require("../models/usuario.model");
+const Usuario = require('../models/usuario.model');
+const bcrypt = require('bcryptjs');
 
 exports.get_login = (request, response, next) => {
     response.render('login', {
@@ -10,9 +11,26 @@ exports.get_login = (request, response, next) => {
 };
 
 exports.post_login = (request, response, next) => {
-    request.session.username = request.body.username;
-    request.session.isLoggedIn = true;
-    response.redirect('/nombres/agregar');
+    Usuario.fetchOne(request.body.username).then(([rows, fieldData]) => {
+        if (rows.length > 0){
+            bcrypt.compare(request.body.password, rows[0].password)
+                .then((doMatch) => {
+                    if(doMatch){
+                        request.session.username = rows[0].username;
+                        request.session.isLoggedIn = true;
+                        response.redirect('/nombres');
+                    }else{
+                        response.redirect('/users/login');
+                    }
+                }).catch((error) => {
+                    console.log(error);
+                });
+        }else{
+            response.redirect('/users/login');
+        }
+    }).catch((error) => {
+        console.log(error);
+    });
 };
 
 exports.get_logout = (request, response, next) => {
