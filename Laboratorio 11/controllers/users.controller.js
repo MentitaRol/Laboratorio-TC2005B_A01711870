@@ -1,7 +1,11 @@
+const { request, response } = require("express");
+const Usuario = require("../models/usuario.model");
+
 exports.get_login = (request, response, next) => {
     response.render('login', {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        isNew: false,
     });
 };
 
@@ -22,5 +26,17 @@ exports.get_signup = (request, response, next) => {
     response.render('login', {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        isNew: true,
+    });
+};
+
+exports.post_signup = (request, response, next) => {
+    const nuevo_usuario = new
+        Usuario(request.body.username, request.body.password);
+    
+    nuevo_usuario.save().then(() => {
+        response.redirect('/users/login');
+    }).catch((error) => {
+        console.log(error);
     });
 };
