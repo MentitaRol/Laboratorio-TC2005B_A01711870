@@ -16,4 +16,11 @@ exports.get_logout = (request, response, next) => {
         //Este código se ejecuta cuando la sesión se elimina.
         response.redirect('/users/login'); 
     })
-}
+};
+
+exports.get_signup = (request, response, next) => {
+    response.render('login', {
+        isLoggedIn: request.session.isLoggedIn || false,
+        username: request.session.username || '',
+    });
+};
