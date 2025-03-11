@@ -1,5 +1,3 @@
-// lab 11 y 12
-
 const express = require('express');
 const app = express();
 
@@ -27,6 +25,11 @@ app.use(session({
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+//rotección contra ataques CSRF
+
+const csrf = require('csurf');
+const csrfProtection = csrf();
+app.use(csrfProtection);
 
 //Configurar un modulo de express -> Middleware
 

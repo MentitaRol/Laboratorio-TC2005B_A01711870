@@ -7,6 +7,7 @@ exports.get_agregar = (request, response, next) => {
     response.render('agregar_nombre', {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        csrfToken: request.csrfToken(),
     });
 }
 
