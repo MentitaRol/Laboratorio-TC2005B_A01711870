@@ -6,9 +6,14 @@
     </div>
 <% } %>
 
-<a class="btn btn-primary " href="/nombres/agregar">
-    Agregar nombre
-</a><br><br>
+<% for (let privilegio of privilegios) { %>
+    <% if(privilegio.nombre == "agregar nombres"){ %>
+        <a class="btn btn-primary " href="/nombres/agregar">
+            Agregar nombre
+        </a>
+    <% } %>
+<% } %>
+<br><br>
 
 <div class="col">
     <% for(let nombre of nombres){ %>

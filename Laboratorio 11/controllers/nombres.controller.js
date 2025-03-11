@@ -38,6 +38,7 @@ exports.get_lista = (request, response, next) => {
                 isLoggedIn: request.session.isLoggedIn || false,
                 username: request.session.username || '',
                 info: mensaje,
+                privilegios: request.session.privilegios || [],
             });
         })
         .catch((error) => {
