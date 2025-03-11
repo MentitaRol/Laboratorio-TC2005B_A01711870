@@ -7,6 +7,7 @@ const router = express.Router();
 const isAuth = require('../util/is-auth');
 
 const canCreateNombre = require('../util/canCreateNombre');
+const canViewNombres = require('../util/canViewNombres');
 
 //Separar logica de controladores y rutas | lab 13
 const nombres_controller = require('../controllers/nombres.controller');
@@ -17,8 +18,8 @@ router.post('/agregar', isAuth, canCreateNombre, nombres_controller.post_agregar
 router.get('/mostrar', isAuth, nombres_controller.get_mostrar);
 
 // ruta dinamica
-router.get('/:id', isAuth, nombres_controller.get_lista);
+router.get('/:id', isAuth, canViewNombres, nombres_controller.get_lista);
 
-router.get('/', nombres_controller.get_lista);
+router.get('/', isAuth, canViewNombres, nombres_controller.get_lista);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 module.exports = (request, response, next) => {
     let canCreate = false;
     for(let privilegio of request.session.privilegios){
-        if(privilegio.nombre == "agregar nombres"){
+        if(privilegio.nombre == "ver nombres"){
             canCreate = true;
             next();
         }   
