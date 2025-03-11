@@ -25,6 +25,7 @@ app.use(session({
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+//rotección contra ataques CSRF
 
 const csrf = require('csurf');
 const csrfProtection = csrf();
