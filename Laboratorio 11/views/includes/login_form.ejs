@@ -8,6 +8,7 @@
 </head>
 <body>
     <form action="<% if(isNew) { %>/users/signup<% } else { %>/users/login<% } %> " method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     
         <div class="form-floating">
