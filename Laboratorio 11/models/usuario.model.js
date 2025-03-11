@@ -42,7 +42,7 @@ module.exports = class Usuario{
             AND RP.rol_id = R.id 
             AND R.id = UR.rol_id 
             AND UR.usuario_id = U.id 
-            AND U.username = ?`
+            AND U.username = ?`,
             [username]);
     }
 }

@@ -19,9 +19,21 @@ exports.post_login = (request, response, next) => {
                     if(doMatch){
                         request.session.username = rows[0].username;
                         request.session.isLoggedIn = true;
+
+                    //Agregar privilegios a la sesion 
+                    Usuario.getPrivilegios(rows[0].username)
+                    .then(([privilegios, fieldData]) => {
+                        request.session.privilegios = [];
+                        for(let privilegio of privilegios){
+                            request.session.privilegios.push(privilegio);
+                        }
                         return request.session.save(err => {
                             response.redirect('/nombres');
                         });
+                    }).catch((error) => {
+                        console.log(error);
+                    })
+
                     }else{
                         response.redirect('/users/login');
                     }
